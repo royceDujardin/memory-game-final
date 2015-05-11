@@ -52,8 +52,26 @@ table {
   font-size: 4em;
   font-family: Orbitron, sans-serif;
   line-height: 1.4em;
+  letter-spacing: 2px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
+.gameInfo{
+  width: 75%;
+  height: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.userHealth{
+  float: left;
+}
+
+.gameTimer{
+  float: right;
+}
 
 .board-game-container{
   padding-top: 2em;
@@ -64,6 +82,19 @@ table {
 
 .game-board{
   padding: 2em;
+  padding-left: 3em;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+
+
+}
+
+.game-board:after{
+  content: ' ';
+  display: block;
+  clear: both;
 }
 
 .easy .game-tile{
@@ -77,25 +108,49 @@ table {
   display: inline-block;
   border-right: 0;
   border-bottom: 0;
-  box-sizing: border-box;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #3F51B5;
   float: left;
+  border-radius: .25em;
+  background-color: #7986CB;
+
 
 }
 
-.game-board:after{
-  content: ' ';
-  display: block;
-  clear: both;
-}
 
 .game-card{
+  display: block;
   position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
+  top: 1px;
+  bottom: 1px;
+  right: 1px;
+  left: 1px;
   background: #7986CB;
-  z-index: 10;
-  border-box: .5em;
-  border-color: #3F51B5;
+  border-radius: .25em;
+
+}
+
+.game-icon{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+}
+
+
+.game-tile input{
+  height: 0;
+  width: 0;
+  position: absolute;
+
+}
+
+.checkbox input:checked + .game-icon{
+
+}
+
+.checkbox input:not(:checked) + .game-icon{
+
 }
